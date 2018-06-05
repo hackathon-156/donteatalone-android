@@ -26,4 +26,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.robertlevonyan.view:MaterialChipView:1.2.1'
+    implementation 'com.anton46:collection-picker:1.0.2'
 }

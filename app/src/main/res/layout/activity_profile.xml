@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -64,8 +65,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/radioGroupSex"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
                 android:text="Breakfast Preferences"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:id="@+id/linearLayout1"
@@ -73,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/label1"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <TextView
@@ -93,6 +96,7 @@
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -109,11 +113,13 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/linearLayout1"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <TextView
@@ -133,6 +139,7 @@
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -147,6 +154,32 @@
                 </RadioGroup>
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Cuisine"
+                android:textSize="20sp" />
+
+            <com.anton46.collectionitempicker.CollectionPicker
+                android:id="@+id/collection_item_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label2"
+                app:cp_addIcon="@android:drawable/ic_menu_add"
+                app:cp_cancelIcon="@android:drawable/ic_menu_close_clear_cancel"
+                app:cp_itemBackgroundNormal="@color/blue"
+                app:cp_itemBackgroundPressed="@color/red"
+                app:cp_itemMargin="5dp"
+                app:cp_simplified="false"
+                app:cp_textPaddingBottom="5dp"
+                app:cp_textPaddingLeft="10dp"
+                app:cp_textPaddingRight="10dp"
+                app:cp_textPaddingTop="5dp" />
 
         </RelativeLayout>
 
