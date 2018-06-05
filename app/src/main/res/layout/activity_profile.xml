@@ -162,6 +162,46 @@
                 android:layout_below="@id/linearLayout2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
+                android:text="Budget"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupBudget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label2"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$$" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$$$" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$$$$" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/label3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radioGroupBudget"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
                 android:text="Cuisine"
                 android:textSize="20sp" />
 
@@ -169,7 +209,7 @@
                 android:id="@+id/collection_item_picker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/label2"
+                android:layout_below="@id/label3"
                 app:cp_addIcon="@android:drawable/ic_menu_add"
                 app:cp_cancelIcon="@android:drawable/ic_menu_close_clear_cancel"
                 app:cp_itemBackgroundNormal="@color/blue"
