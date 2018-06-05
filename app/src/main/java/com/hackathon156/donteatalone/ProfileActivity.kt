@@ -6,6 +6,9 @@ import android.util.Log
 import android.widget.Toast
 import com.anton46.collectionitempicker.Item
 import kotlinx.android.synthetic.main.activity_profile.*
+import net.hockeyapp.android.CrashManager
+import net.hockeyapp.android.UpdateManager
+
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -28,6 +31,8 @@ class ProfileActivity : AppCompatActivity() {
         buttonEditProfile.setOnClickListener {
             Log.d(TAG, finalCuisines.toString())
         }
+
+        checkForUpdates()
     }
 
     private fun makeFinalCuisinesList(item: Item) {
@@ -36,6 +41,35 @@ class ProfileActivity : AppCompatActivity() {
         } else {
             finalCuisines[item.id] = item.text
         }
+    }
+
+    public override fun onResume() {
+        super.onResume()
+        // ... your own onResume implementation
+        checkForCrashes()
+    }
+
+    public override fun onPause() {
+        super.onPause()
+        unregisterManagers()
+    }
+
+    public override fun onDestroy() {
+        super.onDestroy()
+        unregisterManagers()
+    }
+
+    private fun checkForCrashes() {
+        CrashManager.register(this)
+    }
+
+    private fun checkForUpdates() {
+        // Remove this for store builds!
+        UpdateManager.register(this)
+    }
+
+    private fun unregisterManagers() {
+        UpdateManager.unregister()
     }
 
     private fun loadCuisines() {

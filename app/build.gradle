@@ -12,6 +12,7 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [HOCKEYAPP_APP_ID: "2f32e39d98ff4d5da8bccd48f83268b6"]
     }
     buildTypes {
         release {
@@ -26,4 +27,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.anton46:collection-picker:1.0.2'
+    implementation 'net.hockeyapp.android:HockeySDK:5.1.0'
 }
