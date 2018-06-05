@@ -8,12 +8,12 @@ import android.support.v7.app.AppCompatActivity
 class SplashScreen : AppCompatActivity() {
 
     private var mDelayHandler: Handler? = null
-    val SPLASH_DELAY: Long = 3000 //3 seconds
+    val SPLASH_DELAY: Long = 500 //3 seconds
 
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
 
-            val intent = Intent(applicationContext, SignUpActivity::class.java)
+            val intent = Intent(applicationContext, ProfileActivity::class.java)
             startActivity(intent)
             finish()
         }
