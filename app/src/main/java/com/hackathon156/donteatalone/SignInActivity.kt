@@ -10,6 +10,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.github.kittinunf.fuel.Fuel
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 
@@ -46,8 +47,8 @@ class SignInActivity : AppCompatActivity() {
         val email = txtEmailSignIn.text
         val passkey = txtPasswordSignIn.text
 
-        val queue = Volley.newRequestQueue(this)
-        val url = "http://ec2-18-208-136-123.compute-1.amazonaws.com:8080/signin"
+        /*val queue = Volley.newRequestQueue(this)
+        val url = "http://ec2-54-224-13-215.compute-1.amazonaws.com:8080/signin"
 
         val stringRequest = object : StringRequest(Request.Method.POST, url,
                 Response.Listener<String> { response ->
@@ -69,10 +70,13 @@ class SignInActivity : AppCompatActivity() {
                 header["Content-Type"] = "application/json"
                 return header
             }
-        }
+        }*/
 
 // Add the request to the RequestQueue.
-        queue.add(stringRequest)
+        /*queue.add(stringRequest)*/
+
+        Fuel.post("http://httpbin.org/post").body("{ \"foo\" : \"bar\" }").response { request, response, result ->
+        }
 
         /*Fuel.post("http://ec2-18-208-136-123.compute-1.amazonaws.com:8080/signin")
                 .body(params.toString())
